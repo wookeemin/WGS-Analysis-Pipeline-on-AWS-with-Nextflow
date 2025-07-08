@@ -1,7 +1,9 @@
 # WGS-Analysis-Pipeline-on-AWS-with-Nextflow
 AWS + Nextflow-based Whole Genome Sequencing (WGS) pipeline project template and practical guide
 
-Project Structure (GitHub-style layout)
+Project Structure:
+[image](https://github.com/user-attachments/assets/df4a3d12-c432-4e5c-a4c7-bf7aba8aa234)
+
 
 nextflow-wgs-pipeline/
 ├── data/
@@ -18,6 +20,8 @@ nextflow-wgs-pipeline/
 ├── nextflow.config             # Config file (executors, params)
 └── aws.config                  # AWS Batch-specific config block
 
+
+
 Key Files Description
 
 1. main.nf (Main Pipeline Definition)
@@ -33,6 +37,7 @@ workflow {
     filtered_vcf_ch = variant_filtering(variants_ch)
 }
 
+
 2. aws.config (AWS Batch Executor Settings)
 
 process.executor = 'awsbatch'
@@ -46,6 +51,7 @@ aws {
     jobDefinition = 'NGSJobDefinition'
   }
 }
+
 
 3.Practical Tips Summary
 
