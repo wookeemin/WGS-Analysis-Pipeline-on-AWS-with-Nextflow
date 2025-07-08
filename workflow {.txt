@@ -1,0 +1,12 @@
+workflow {
+  sample_id = "sample"
+  reads = [ file("data/sample_R1.fastq.gz"), file("data/sample_R2.fastq.gz") ]
+
+  BWA_MEM(sample_id, reads)
+  MarkDuplicates(BWA_MEM.out.sorted_bam)
+  BQSR(MarkDuplicates.out.dedup_bam)
+  ApplyBQSR(MarkDuplicates.out.dedup_bam, BQSR.out.recal_data.table)
+
+  HaplotypeCaller(ApplyBQSR.out.recal_bam)
+  VariantFilter(HaplotypeCaller.out)
+}

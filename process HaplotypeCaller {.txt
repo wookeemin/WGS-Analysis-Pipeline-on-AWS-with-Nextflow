@@ -1,0 +1,16 @@
+process HaplotypeCaller {
+  input:
+  path recal_bam
+
+  output:
+  path("raw_variants.g.vcf.gz")
+
+  script:
+  """
+  gatk HaplotypeCaller \
+    -R ${params.ref} \
+    -I recal.bam \
+    -O raw_variants.g.vcf.gz \
+    -ERC GVCF
+  """
+}

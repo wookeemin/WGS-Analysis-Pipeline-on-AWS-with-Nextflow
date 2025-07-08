@@ -1,0 +1,18 @@
+executor {
+  name = 'awsbatch'
+  queue = 'your-job-queue-name'
+  region = 'us-east-1'
+}
+
+aws {
+  batch {
+    cliPath = '/usr/local/bin/aws'
+    jobRole = 'your-ecs-job-role'
+    volumes = 'my-bucket:/mnt/data'
+    remoteBinDir = 's3://my-bucket/nxf-bin/'
+  }
+}
+
+docker.enabled = true
+process.container = 'broadinstitute/gatk:4.4.0.0'
+workDir = 's3://my-bucket/work'

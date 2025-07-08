@@ -1,0 +1,17 @@
+process VariantFilter {
+  input:
+  path vcf
+
+  output:
+  path("filtered.vcf.gz")
+
+  script:
+  """
+  gatk VariantFiltration \
+    -R ${params.ref} \
+    -V raw_variants.g.vcf.gz \
+    -O filtered.vcf.gz \
+    --filter-expression "QD < 2.0" \
+    --filter-name "LowQD"
+  """
+}
