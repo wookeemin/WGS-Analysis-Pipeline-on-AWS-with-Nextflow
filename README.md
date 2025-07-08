@@ -49,7 +49,7 @@ aws {
 
 4. Downloadable Template
 
-You can download the complete Nextflow project structure as a ZIP file here:nextflow_wgs_pipeline_template.zip 
+You can download the complete Nextflow project structure as a ZIP file here:      e.g.,     nextflow_wgs_pipeline_template.zip 
 
 
 
