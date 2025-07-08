@@ -5,23 +5,6 @@ Project Structure:
 [image](https://github.com/user-attachments/assets/df4a3d12-c432-4e5c-a4c7-bf7aba8aa234)
 
 
-nextflow-wgs-pipeline/
-├── data/
-│   └── fastq/                  # Sample FASTQ data
-├── bin/                       
-│   ├── bwa_mem.sh              # BWA alignment script
-│   ├── mark_duplicates.sh      # GATK MarkDuplicates script
-│   ├── bqsr.sh                 # GATK BaseRecalibration
-│   ├── variant_calling.sh      # GATK HaplotypeCaller
-│   └── filtering.sh            # Variant filtering
-├── envs/
-│   └── gatk.yml                # Conda environment with GATK
-├── main.nf                     # Nextflow main pipeline
-├── nextflow.config             # Config file (executors, params)
-└── aws.config                  # AWS Batch-specific config block
-
-
-
 Key Files Description
 
 1. main.nf (Main Pipeline Definition)
