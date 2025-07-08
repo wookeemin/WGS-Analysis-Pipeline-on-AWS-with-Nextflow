@@ -6,7 +6,7 @@ process {
   memory = '8 GB'
   time = '6h'
 
-  // 로그나 중간 파일을 저장할 S3 경로
+  // S3 path to save log or intermediate files
   scratch = true
   errorStrategy = 'retry'
 }
